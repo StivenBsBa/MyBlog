@@ -1,0 +1,66 @@
+#education {
+  padding: 2rem;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+#education h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.education,
+.experience {
+  margin-bottom: 2rem;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+}
+
+strong {
+  font-weight: bold;
+  color: #333;
+}
+
+em {
+  font-style: italic;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  #education {
+    padding: 1rem;
+  }
+
+  #education h2 {
+    font-size: 2rem;
+  }
+
+  .education,
+  .experience {
+    padding: 1rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
