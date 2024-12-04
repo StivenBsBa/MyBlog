@@ -1,0 +1,63 @@
+#experience-section {
+  background-color: #454545; /* Fondo negro semitransparente */
+  padding: 50px 20px;
+  border-radius: 10px;
+}
+
+/* Títulos de las secciones */
+.experience-title {
+  font-family: "Arial", sans-serif;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Diseño y estilo para las tarjetas */
+.experience-card {
+  border-radius: 10px; /* Bordes redondeados */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde con transparencia */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Fondo blanco con transparencia */
+}
+
+.experience-card:hover {
+  transform: translateY(-10px); /* Efecto de elevación */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5); /* Sombra más prominente */
+}
+
+/* Estilo para los títulos dentro de las tarjetas */
+.experience-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Descripción en las tarjetas */
+.experience-card-description {
+  font-size: 0.9rem;
+  color: #dddddd; /* Gris claro para el texto */
+  line-height: 1.6;
+}
+
+/* Espaciado entre las tarjetas */
+.experience-card .card-body {
+  padding: 20px;
+}
+
+/* Asegura margen en pantallas pequeñas */
+@media (max-width: 576px) {
+  .experience-card {
+    margin-bottom: 20px;
+  }
+}

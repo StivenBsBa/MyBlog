@@ -11,8 +11,9 @@
   margin: 0 auto;
 }
 
-.footer p {
+.footer-text {
   margin: 10px 0;
+  text-align: center; /* Asegura que el texto esté centrado */
 }
 
 .social-links {
@@ -33,6 +34,10 @@
 
 .social-links a:hover {
   text-decoration: underline;
+}
+
+.text-center {
+  text-align: center;
 }
 
 @media (max-width: 768px) {

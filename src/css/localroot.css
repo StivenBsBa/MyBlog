@@ -1,43 +1,66 @@
+/* Estilos generales */
 .localroot-container {
-  padding: 2rem;
+  padding: 4rem;
   max-width: 1200px;
   margin: 0 auto;
+  color: white; /* Letras blancas */
+  border-radius: 10px;
 }
 
 h1 {
   text-align: center;
   font-size: 3rem;
-  color: #333;
   margin-bottom: 2rem;
+  color: white;
 }
 
 h2 {
   font-size: 2rem;
-  color: #007bff;
+  color: #ffffff;
+  font-weight: bold;
   margin-top: 2rem;
 }
 
 p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #555;
+  color: #ddd; /* Gris claro para párrafos */
+  text-align: justify;
 }
 
 ul {
-  list-style-type: none;
+  list-style-type: disc;
   padding-left: 0;
 }
 
 ul li {
   font-size: 1.1rem;
-  color: #555;
+  color: #ddd; /* Gris claro para elementos de la lista */
   margin-bottom: 0.5rem;
+}
+
+/* Estilo para los botones */
+button {
+  background-color: #007bff; /* Azul de fondo */
+  color: white; /* Letras blancas */
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
 }
 
 section {
   margin-bottom: 2rem;
 }
 
+/* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   h1 {
     font-size: 2.5rem;
@@ -48,6 +71,10 @@ section {
   }
 
   p {
+    font-size: 1rem;
+  }
+
+  ul li {
     font-size: 1rem;
   }
 }

@@ -1,70 +1,95 @@
+/* Estilo general para el contenedor del portafolio */
 #portfolio {
-  padding: 2rem;
-  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  background-color: #454545; /* Fondo oscuro con transparencia */
   border-radius: 10px;
-  margin-bottom: 2rem;
+  margin: 20px 0;
 }
 
 #portfolio h2 {
-  text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #333;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.project {
-  background-color: white;
-  padding: 2rem;
+/* Contenedor de las tarjetas */
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Estilo para cada tarjeta */
+.portfolio-card {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Fondo blanco semitransparente */
+  border: 1px solid #ddd;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.project h3 {
-  font-size: 2rem;
-  color: #007bff;
-  margin-bottom: 1rem;
+.portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-.project img.project-logo {
-  max-width: 200px;
-  margin: 1rem 0;
+/* Estilo para el encabezado de la tarjeta (título y año) */
+.portfolio-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
-.project p {
+.portfolio-card h3 {
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.project-year {
   font-size: 1rem;
-  color: #555;
-  margin-bottom: 1rem;
+  color: #aaaaaa;
+  font-style: italic;
 }
 
-.project .btn-ver-mas {
+/* Descripción de la tarjeta */
+.portfolio-card-description {
+  color: #dddddd;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Botón */
+.view-project-button {
   background-color: #007bff;
-  color: white;
-  padding: 0.5rem 1.5rem;
+  color: #fff;
+  border: none;
   border-radius: 5px;
-  text-decoration: none;
+  padding: 10px 20px;
+  cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-.project .btn-ver-mas:hover {
+.view-project-button:hover {
   background-color: #0056b3;
 }
 
-@media (max-width: 768px) {
-  #portfolio {
-    padding: 1rem;
-  }
-
-  #portfolio h2 {
-    font-size: 2rem;
-  }
-
-  .project h3 {
-    font-size: 1.8rem;
-  }
-
-  .project p {
-    font-size: 0.9rem;
-  }
+/* Mensaje de error */
+.error-message {
+  margin-top: 20px;
+  color: red;
+  font-weight: bold;
+  text-align: center;
 }

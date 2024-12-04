@@ -1,51 +1,52 @@
+/* Estilo general para la sección */
 #interests {
-  padding: 2rem;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  margin-bottom: 2rem;
+  padding: 20px;
+  text-align: center;
+  background-color: #454545;
 }
 
 #interests h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #333;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-weight: bold;
 }
 
-.interest {
-  background-color: white;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+/* Contenedor de las tarjetas */
+.interests-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Estilo para cada tarjeta */
+.interest-card {
+  background-color: #ffffff1a;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 5px;
+  width: 300px;
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.interest h3 {
-  font-size: 1.8rem;
-  color: #007bff;
-  margin-bottom: 1rem;
+.interest-card h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-.interest p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.6;
+.interest-card p {
+  color: #dddddd;
+  margin: 5px 0;
+  text-align: justify;
 }
 
-@media (max-width: 768px) {
-  #interests {
-    padding: 1rem;
-  }
-
-  #interests h2 {
-    font-size: 2rem;
-  }
-
-  .interest h3 {
-    font-size: 1.5rem;
-  }
-
-  .interest p {
-    font-size: 0.9rem;
-  }
+.interest-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
 }

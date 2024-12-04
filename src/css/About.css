@@ -14,7 +14,7 @@
 
 .about-image {
   flex: 1;
-  padding-right: 2rem;
+  padding-right: 1rem;
 }
 
 .about-image img {
@@ -31,11 +31,16 @@
 .about h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .about p {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-align: justify;
 }
 
 .about ul {
@@ -46,9 +51,13 @@
 .about ul li {
   margin: 0.5rem 0;
   font-size: 1.1rem;
+  color: #ffffff;
 }
 
 @media (max-width: 768px) {
+  .about-container {
+    padding-top: 3rem;
+  }
   .about-container {
     flex-direction: column;
     text-align: center;

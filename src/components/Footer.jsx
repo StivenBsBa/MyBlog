@@ -1,41 +1,40 @@
-import React from "react";
-import "../css/Footer.css";
+import { Container, Row, Col } from "react-bootstrap";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <p>&copy; 2024 Mi Portafolio. Todos los derechos reservados.</p>
-        <ul className="social-links">
-          <li>
+    <footer className="bg-dark text-white py-4 mt-auto">
+      <Container>
+        <Row className="text-center">
+          <Col>
+            <p className="footer-text">
+              El único modo de hacer un gran trabajo es amar lo que haces.
+            </p>
+          </Col>
+        </Row>
+        <Row className="text-center">
+          <Col>
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/brayanstiven/"
+              className="text-white mx-3"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
             >
-              LinkedIn
+              <FaLinkedin size={30} />
             </a>
-          </li>
-          <li>
             <a
-              href="https://github.com"
+              href="https://github.com/StivenBsBa"
+              className="text-white mx-3"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub"
             >
-              GitHub
+              <FaGithub size={30} />
             </a>
-          </li>
-          <li>
-            <a
-              href="mailto:correo@ejemplo.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Email
-            </a>
-          </li>
-        </ul>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </footer>
   );
 };

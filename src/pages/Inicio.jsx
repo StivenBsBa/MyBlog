@@ -1,23 +1,19 @@
-import React from "react";
-import Header from "../components/Header";
 import About from "../components/About";
-import EducationExperience from "../components/EducationExperience";
+import Education from "../components/Education";
+import Experience from "../components/Experience";
 import Skills from "../components/Skills";
 import Portfolio from "../components/Portfolio";
 import Interests from "../components/Interests";
-import Footer from "../components/Footer";
 
 const Inicio = () => {
   return (
     <div>
-      {/* Componente Header que probablemente contenga la barra de navegación */}
-      <Header />
-
       {/* Sección de Acerca de */}
       <About />
 
       {/* Sección de Educación y Experiencia */}
-      <EducationExperience />
+      <Education />
+      <Experience />
 
       {/* Sección de Habilidades */}
       <Skills />
@@ -27,9 +23,6 @@ const Inicio = () => {
 
       {/* Sección de Intereses */}
       <Interests />
-
-      {/* Componente Footer con la información de pie de página */}
-      <Footer />
     </div>
   );
 };

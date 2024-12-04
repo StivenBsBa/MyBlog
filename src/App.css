@@ -1,0 +1,11 @@
+.global {
+  background-color: #4b4b4b;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-family: "Times New Roman", Times, serif, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
