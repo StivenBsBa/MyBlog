@@ -41,6 +41,8 @@
   margin-bottom: 1.5rem;
   color: #ffffff;
   text-align: justify;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .about ul {

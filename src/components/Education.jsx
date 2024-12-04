@@ -7,7 +7,7 @@ const EducationExperience = () => {
     {
       title: "Ingeniería de Sistemas",
       institution: "Corporación Universitaria Adventista",
-      period: "2021 - 2025",
+      period: "2021 - En Curso",
       location: "Medellín, Antioquia",
       description:
         "Actualmente me encuentro en formación en la carrera de Ingeniería de Sistemas, donde estoy adquiriendo conocimientos y habilidades en áreas como la programación, la arquitectura de software y la gestión de proyectos tecnológicos.",
@@ -15,7 +15,7 @@ const EducationExperience = () => {
     {
       title: "Tecnico de Sistemas",
       institution: "SENA",
-      period: "2018 - 2029",
+      period: "2018 - 2019",
       location: "Abrego Norte de Santander",
       description:
         "Durante mi formación como técnico, adquirí conocimientos sobre mantenimiento y reparación de equipos de cómputo, desarrollando habilidades para diagnosticar y solucionar problemas técnicos. Además, tuve mi primera inmersión en el campo de la programación, sentando las bases para mi crecimiento profesional en tecnología.",
@@ -28,27 +28,29 @@ const EducationExperience = () => {
       institution: "SENA",
       period: "26 Septiembre, 2022",
       description:
-        "Curso centrado en la creación de macros, diseño de tablas e informes dinámicos.",
+        "Este programa capacita en el manejo avanzado de Microsoft Excel 2016, enfocándose en la creación de hojas de cálculo, uso de funciones y fórmulas, gráficos y tablas dinámicas para una gestión eficiente de la información empresarial.",
     },
     {
       title:
         "Desarrollo De Aplicaciones Con Manejo De Datos En La Memoria- Java",
-      institution: "Coursera",
+      institution: "SENA",
       period: "26 Mayo, 2023",
       description:
-        "Curso enfocado en el desarrollo de aplicaciones con manejo eficiente de datos en memoria utilizando Java.",
+        "Este curso enseña cómo gestionar de manera eficiente los datos en memoria utilizando arreglos y colecciones en Java, optimizando el rendimiento de las aplicaciones",
     },
     {
       title: "Despliegue De Aplicaciones Y Servicios En Contenedores Docker",
-      institution: "HackerRank",
+      institution: "SENA",
       period: "Noviembre, 2024",
-      description: "",
+      description:
+        "Este programa enseña a utilizar Docker para crear, empaquetar y desplegar aplicaciones en contenedores, facilitando la integración entre los equipos de desarrollo y operaciones.  Gestionando contenedores, imágenes, y a aplicando conceptos de redes, virtualización y estándares, optimizando la portabilidad y eficiencia del despliegue de aplicaciones.",
     },
     {
       title: "SQL (Basic/Intermediate/Advanced)",
       institution: "HackerRank",
       period: "28 Mayo, 2023",
-      description: "Curso de SQL con ejercicios prácticos.",
+      description:
+        "El certificado de SQL de HackerRank abarca tres niveles: básico, intermedio y avanzado, enseñando desde consultas simples hasta optimización y gestión avanzada de bases de datos, ideal para desarrollar habilidades en SQL.",
     },
   ];
 
@@ -56,12 +58,22 @@ const EducationExperience = () => {
     <section id="education-section">
       <h2 className="education-title">Educación & Certificados</h2>
 
+      {/* Bloque de Educación */}
       <div className="education-container">
         <h3 className="education-subtitle">Mi Educación</h3>
-        <Row xs={1} sm={2} md={3} className="g-4">
+        <Row
+          xs={1}
+          sm={
+            educationData.length === 1 ? 1 : educationData.length === 2 ? 2 : 3
+          }
+          md={
+            educationData.length === 1 ? 1 : educationData.length === 2 ? 2 : 3
+          }
+          className="g-4"
+        >
           {educationData.map((item, index) => (
             <Col key={index}>
-              <Card className="education-card">
+              <Card className="education-card h-100">
                 <Card.Body>
                   <Card.Title className="education-card-title">
                     {item.title}
@@ -82,13 +94,31 @@ const EducationExperience = () => {
         </Row>
       </div>
 
+      {/* Bloque de Certificados */}
       <div className="certificate-container">
         <h3 className="education-subtitle">Certificados y Cursos</h3>
-        <Row xs={1} sm={2} md={3} className="g-4">
+        <Row
+          xs={1}
+          sm={
+            certificatesData.length === 1
+              ? 1
+              : certificatesData.length === 2
+              ? 2
+              : 3
+          }
+          md={
+            certificatesData.length === 1
+              ? 1
+              : certificatesData.length === 2
+              ? 2
+              : 3
+          }
+          className="g-4"
+        >
           {certificatesData.map((item, index) => (
             <Col key={index}>
-              <Card className="education-card">
-                <Card.Body>
+              <Card className="education-card h-100">
+                <Card.Body className="card-body">
                   <Card.Title className="education-card-title">
                     {item.title}
                   </Card.Title>

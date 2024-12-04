@@ -1,16 +1,14 @@
 #education-section {
-  background-color: #454545; /* Fondo semi-transparente negro */
+  background-color: #454545;
   padding: 25px 20px;
   border-radius: 10px;
 }
 
-/* Títulos de las secciones */
 .education-title {
   font-family: "Arial", sans-serif;
   color: #ffffff;
   font-weight: bold;
   text-align: center;
-  font-weight: bold;
   margin-bottom: 20px;
 }
 
@@ -20,65 +18,69 @@
   margin-bottom: 20px;
   font-size: 1.5rem;
   font-weight: bold;
-  font-weight: bold;
 }
 
-/* Diseño y estilo para las tarjetas */
 .education-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordes con transparencia */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  height: 100%;
+  min-height: 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Fondo semi-transparente blanco */
 }
 
 .education-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0px 6px 15px #00000080; /* Sombra más prominente */
+  box-shadow: 0px 6px 15px #00000080;
 }
 
-/* Estilo para los títulos dentro de las tarjetas */
 .education-card-title {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #ffffff; /* Azul claro */
+  color: #ffffff;
   margin-bottom: 15px;
-  font-weight: bold;
   text-align: center;
 }
 
 .education-card-subtitle {
   font-size: 0.9rem;
-  color: #cccccc; /* Texto gris claro */
+  color: #cccccc;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .education-card-location {
   font-size: 0.9rem;
-  color: #b0b0b0; /* Texto gris más claro */
+  color: #b0b0b0;
   margin-bottom: 10px;
   text-align: center;
 }
 
 .education-card-description {
   font-size: 0.9rem;
-  color: #dddddd; /* Texto claro */
+  color: #dddddd;
   line-height: 1.6;
 }
 
-/* Espaciado entre las tarjetas */
 .education-card .card-body {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
+
 .certificate-container {
   padding-top: 2rem;
 }
-/* Asegura margen en pantallas pequeñas */
+
 @media (max-width: 576px) {
   .education-card {
     margin-bottom: 20px;
