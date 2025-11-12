@@ -12,6 +12,7 @@ import Skills from "./components/Skills";
 import Portfolio from "./components/Portfolio";
 import Interests from "./components/Interests";
 import LocalrootPage from "./pages/LocalrootPage";
+import IaPlatformPage from "./pages/IaPlatformPage"; // Import the new page
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Inicio />} />
           <Route path="/footer" element={<Footer />} />
           <Route path="/localroot" element={<LocalrootPage />} />
+          <Route path="/ia-platform" element={<IaPlatformPage />} /> {/* Add the new route */}
         </Routes>
         <Footer />
       </Router>

@@ -12,7 +12,29 @@ import {
   FaGit,
   FaGithub,
   FaMicrosoft,
+  FaDocker,
+  FaCodeBranch,
+  FaUsers,
+  FaTrello,
+  FaCode,
+  FaCube,
+  FaGlobe,
+  FaGem,
 } from "react-icons/fa";
+
+import {
+  SiRedux,
+  SiPostman,
+  SiNodedotjs,
+} from "react-icons/si";
+
+import {
+  DiRuby,
+  DiPostgresql,
+  DiMongodb,
+  DiMysql,
+  DiFirebase,
+} from "react-icons/di";
 
 import "../css/Skills.css";
 
@@ -22,47 +44,36 @@ const Skills = () => {
       <h2>Mis Habilidades</h2>
       <div className="skills-list">
         <div className="category">
-          <h3>Desarrollo Web</h3>
+          <h3>Backend</h3>
           <ul>
             <li>
-              <FaHtml5 size={30} /> HTML
+              <FaPython size={30} /> Python (FastAPI)
             </li>
             <li>
-              <FaCss3Alt size={30} /> CSS
+              <FaNodeJs size={30} /> Node.js (Express)
             </li>
             <li>
-              <FaJs size={30} /> JavaScript
+              <DiRuby size={30} /> Ruby on Rails
             </li>
+          </ul>
+        </div>
+        <div className="category">
+          <h3>Frontend</h3>
+          <ul>
             <li>
               <FaReact size={30} /> React
             </li>
             <li>
-              <FaBootstrap size={30} /> Bootstrap
-            </li>
-          </ul>
-        </div>
-        <div className="category">
-          <h3>Diseño</h3>
-          <ul>
-            <li>
-              <FaFigma size={30} /> Figma
-            </li>
-          </ul>
-        </div>
-        <div className="category">
-          <h3>Desarrollo Backend</h3>
-          <ul>
-            <li>
-              <FaNodeJs size={30} /> Node.js
+              <SiRedux size={30} /> Redux
             </li>
             <li>
-              <FaJava size={30} /> Java
+              <FaJs size={30} /> JavaScript (ES6+)
             </li>
             <li>
-              <FaPython size={30} /> Python
+              <FaHtml5 size={30} /> HTML5
             </li>
             <li>
-              <FaJs size={30} /> JavaScript
+              <FaCss3Alt size={30} /> CSS3
             </li>
           </ul>
         </div>
@@ -70,24 +81,64 @@ const Skills = () => {
           <h3>Bases de Datos</h3>
           <ul>
             <li>
-              <FaDatabase size={30} /> SQL
+              <DiPostgresql size={30} /> PostgreSQL
             </li>
             <li>
-              <FaDatabase size={30} /> NoSQL
+              <DiMongodb size={30} /> MongoDB
+            </li>
+            <li>
+              <DiMysql size={30} /> MySQL
+            </li>
+            <li>
+              <DiFirebase size={30} /> Firebase
             </li>
           </ul>
         </div>
         <div className="category">
-          <h3>Extra</h3>
+          <h3>DevOps & Tools</h3>
           <ul>
             <li>
               <FaGit size={30} /> Git
             </li>
             <li>
-              <FaGithub size={30} /> GitHub
+              <FaDocker size={30} /> Docker
             </li>
             <li>
-              <FaMicrosoft size={30} /> Power BI
+              <SiPostman size={30} /> Postman
+            </li>
+            <li>
+              <FaCodeBranch size={30} /> CI/CD básico
+            </li>
+            <li>
+              <SiNodedotjs size={30} /> N8N
+            </li>
+          </ul>
+        </div>
+        <div className="category">
+          <h3>Metodologías</h3>
+          <ul>
+            <li>
+              <FaUsers size={30} /> Scrum
+            </li>
+            <li>
+              <FaTrello size={30} /> Kanban
+            </li>
+            <li>
+              <FaCode size={30} /> Clean Code
+            </li>
+            <li>
+              <FaCube size={30} /> SOLID
+            </li>
+          </ul>
+        </div>
+        <div className="category">
+          <h3>Idiomas</h3>
+          <ul>
+            <li>
+              <FaGlobe size={30} /> Español (Nativo)
+            </li>
+            <li>
+              <FaGlobe size={30} /> Inglés (Intermedio – B1)
             </li>
           </ul>
         </div>
