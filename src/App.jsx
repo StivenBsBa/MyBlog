@@ -21,12 +21,6 @@ function App() {
         {/* Asegura que el enrutador reconozca el prefijo "/MyBlog" */}
         <Routes>
           <Route path="/" element={<Inicio />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/Experience" element={<Experience />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/interests" element={<Interests />} />
           <Route path="/footer" element={<Footer />} />
           <Route path="/localroot" element={<LocalrootPage />} />
         </Routes>

@@ -55,7 +55,7 @@ const EducationExperience = () => {
   ];
 
   return (
-    <section id="education-section">
+    <section id="education">
       <h2 className="education-title">Educación & Certificados</h2>
 
       {/* Bloque de Educación */}

@@ -12,7 +12,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience-section">
+    <section id="experience">
       <h2 className="experience-title">Mi Experiencia</h2>
 
       <Row xs={1} sm={2} md={3} className="g-4">

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import "../css/Header.css";
 
 const Header = () => {
@@ -36,48 +35,48 @@ const Header = () => {
           id="navbarNavAltMarkup"
         >
           <div className="navbar-nav ms-auto">
-            <Link
+            <a
               className="nav-link active text-white"
-              to="/about"
+              href="#about"
               onClick={closeMenu}
             >
               Sobre mí
-            </Link>
-            <Link
+            </a>
+            <a
               className="nav-link text-white"
-              to="/education"
+              href="#education"
               onClick={closeMenu}
             >
               Educación
-            </Link>
-            <Link
+            </a>
+            <a
               className="nav-link text-white"
-              to="/experience"
+              href="#experience"
               onClick={closeMenu}
             >
               Experiencia
-            </Link>
-            <Link
+            </a>
+            <a
               className="nav-link text-white"
-              to="/skills"
+              href="#skills"
               onClick={closeMenu}
             >
               Habilidades
-            </Link>
-            <Link
+            </a>
+            <a
               className="nav-link text-white"
-              to="/portfolio"
+              href="#portfolio"
               onClick={closeMenu}
             >
               Portafolio
-            </Link>
-            <Link
+            </a>
+            <a
               className="nav-link text-white"
-              to="/interests"
+              href="#interests"
               onClick={closeMenu}
             >
               Intereses
-            </Link>
+            </a>
           </div>
         </div>
       </div>
