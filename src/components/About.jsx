@@ -39,7 +39,7 @@ const About = () => {
           </ul>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

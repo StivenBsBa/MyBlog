@@ -1,4 +1,5 @@
 import {
+  useInView,
   FaHtml5,
   FaCss3Alt,
   FaJs,
@@ -22,11 +23,7 @@ import {
   FaGem,
 } from "react-icons/fa";
 
-import {
-  SiRedux,
-  SiPostman,
-  SiNodedotjs,
-} from "react-icons/si";
+import { SiRedux, SiPostman, SiNodedotjs } from "react-icons/si";
 
 import {
   DiRuby,
@@ -37,14 +34,31 @@ import {
 } from "react-icons/di";
 
 import "../css/Skills.css";
+import AnimatedSection from "./AnimatedSection";
+
+const SkillCategory = ({ title, children }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
+  return (
+    <div
+      ref={ref}
+      className={`card category fade-in-section ${inView ? "is-visible" : ""}`}
+    >
+      <h3>{title}</h3>
+      <ul>{children}</ul>
+    </div>
+  );
+};
 
 const Skills = () => {
   return (
-    <section id="skills">
+    <AnimatedSection id="skills">
       <h2>Mis Habilidades</h2>
       <div className="skills-list">
-        <div className="category">
-          <h3>Backend</h3>
+        <SkillCategory title="Backend">
           <ul>
             <li>
               <FaPython size={30} /> Python (FastAPI)
@@ -56,9 +70,8 @@ const Skills = () => {
               <DiRuby size={30} /> Ruby on Rails
             </li>
           </ul>
-        </div>
-        <div className="category">
-          <h3>Frontend</h3>
+        </SkillCategory>
+        <SkillCategory title="Frontend">
           <ul>
             <li>
               <FaReact size={30} /> React
@@ -76,9 +89,8 @@ const Skills = () => {
               <FaCss3Alt size={30} /> CSS3
             </li>
           </ul>
-        </div>
-        <div className="category">
-          <h3>Bases de Datos</h3>
+        </SkillCategory>
+        <SkillCategory title="Bases de Datos">
           <ul>
             <li>
               <DiPostgresql size={30} /> PostgreSQL
@@ -93,9 +105,8 @@ const Skills = () => {
               <DiFirebase size={30} /> Firebase
             </li>
           </ul>
-        </div>
-        <div className="category">
-          <h3>DevOps & Tools</h3>
+        </SkillCategory>
+        <SkillCategory title="DevOps & Tools">
           <ul>
             <li>
               <FaGit size={30} /> Git
@@ -113,9 +124,8 @@ const Skills = () => {
               <SiNodedotjs size={30} /> N8N
             </li>
           </ul>
-        </div>
-        <div className="category">
-          <h3>Metodologías</h3>
+        </SkillCategory>
+        <SkillCategory title="Metodologías">
           <ul>
             <li>
               <FaUsers size={30} /> Scrum
@@ -130,9 +140,8 @@ const Skills = () => {
               <FaCube size={30} /> SOLID
             </li>
           </ul>
-        </div>
-        <div className="category">
-          <h3>Idiomas</h3>
+        </SkillCategory>
+        <SkillCategory title="Idiomas">
           <ul>
             <li>
               <FaGlobe size={30} /> Español (Nativo)
@@ -141,9 +150,9 @@ const Skills = () => {
               <FaGlobe size={30} /> Inglés (Intermedio – B1)
             </li>
           </ul>
-        </div>
+        </SkillCategory>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

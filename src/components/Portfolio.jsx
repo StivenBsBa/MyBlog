@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import AnimatedSection from "./AnimatedSection";
 import "../css/portfolio.css";
 
 const Portfolio = () => {
@@ -47,11 +48,11 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio">
+    <AnimatedSection id="portfolio">
       <h2>Portafolio</h2>
       <div className="portfolio-container">
         {portfolioData.map((project, index) => (
-          <div key={index} className="portfolio-card">
+          <div key={index} className="portfolio-card interactive-card">
             <div className="portfolio-card-header">
               <h3>{project.title}</h3>
               <span className="project-year">{project.year}</span>
@@ -72,7 +73,7 @@ const Portfolio = () => {
         ))}
       </div>
       {error && <div className="error-message">{error}</div>}
-    </section>
+    </AnimatedSection>
   );
 };
 

@@ -1,5 +1,6 @@
 import { Card, Row, Col } from "react-bootstrap";
 import "../css/Education.css"; // Importamos el archivo CSS
+import AnimatedSection from "./AnimatedSection";
 
 const EducationExperience = () => {
   // Datos para la educación y los cursos
@@ -55,11 +56,11 @@ const EducationExperience = () => {
   ];
 
   return (
-    <section id="education">
+    <AnimatedSection id="education">
       <h2 className="education-title">Educación & Certificados</h2>
 
       {/* Bloque de Educación */}
-      <div className="education-container">
+      <div className="education-container card">
         <h3 className="education-subtitle">Mi Educación</h3>
         <Row
           xs={1}
@@ -73,7 +74,7 @@ const EducationExperience = () => {
         >
           {educationData.map((item, index) => (
             <Col key={index}>
-              <Card className="education-card h-100">
+              <Card className="card education-card h-100 interactive-card">
                 <Card.Body>
                   <Card.Title className="education-card-title">
                     {item.title}
@@ -95,7 +96,7 @@ const EducationExperience = () => {
       </div>
 
       {/* Bloque de Certificados */}
-      <div className="certificate-container">
+      <div className="certificate-container card">
         <h3 className="education-subtitle">Certificados y Cursos</h3>
         <Row
           xs={1}
@@ -117,7 +118,7 @@ const EducationExperience = () => {
         >
           {certificatesData.map((item, index) => (
             <Col key={index}>
-              <Card className="education-card h-100">
+              <Card className="card education-card h-100 interactive-card">
                 <Card.Body className="card-body">
                   <Card.Title className="education-card-title">
                     {item.title}
@@ -134,7 +135,7 @@ const EducationExperience = () => {
           ))}
         </Row>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

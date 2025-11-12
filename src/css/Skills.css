@@ -1,7 +1,7 @@
 /* Estilo general para la sección de habilidades */
 #skills {
   padding: 2rem;
-  background-color: #454545; /* Fondo oscuro con transparencia */
+  background-color: transparent; /* El fondo lo manejará el body o un contenedor global */
   border-radius: 10px;
   margin-bottom: 2rem;
 }
@@ -10,7 +10,7 @@
 #skills h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   color: #ffffff; /* Blanco para el título */
 }
 
@@ -23,15 +23,11 @@
 
 /* Estilo de cada categoría */
 .category {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Fondo blanco semitransparente */
+  background-color: #1e1e1e; /* Un gris oscuro, más opaco */
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Título dentro de las categorías */
@@ -51,15 +47,16 @@
 
 .category ul li {
   font-size: 1rem;
-  color: #dddddd; /* Gris claro para el texto */
+  color: #e0e0e0; /* Un gris más claro para mejor lectura */
   margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el ícono y el texto */
 }
 
 /* Marcador de lista con color azul */
 .category ul li::before {
-  content: "⚪";
-  color: #ffffff;
-  margin-right: 0.5rem;
+  content: ""; /* Eliminamos el marcador de lista por defecto */
 }
 
 /* Estilos para pantallas pequeñas */

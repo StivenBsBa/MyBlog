@@ -2,13 +2,13 @@
 #interests {
   padding: 20px;
   text-align: center;
-  background-color: #454545;
+  background-color: transparent;
 }
 
 #interests h2 {
   font-size: 2rem;
-  margin-bottom: 10px;
   color: #ffffff;
+  margin-bottom: 3rem;
   font-weight: bold;
 }
 
@@ -21,14 +21,13 @@
 
 /* Estilo para cada tarjeta */
 .interest-card {
-  background-color: #ffffff1a;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: #1e1e1e;
+  border: 1px solid #333;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 15px;
   margin: 5px;
   width: 300px;
-  text-align: left;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -41,12 +40,7 @@
 }
 
 .interest-card p {
-  color: #dddddd;
+  color: #c0c0c0;
   margin: 5px 0;
   text-align: justify;
-}
-
-.interest-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
 }

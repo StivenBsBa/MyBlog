@@ -1,11 +1,13 @@
 import { Card, Row, Col } from "react-bootstrap";
 import "../css/Experience.css"; // Importamos el archivo CSS
+import AnimatedSection from "./AnimatedSection";
 
 const Experience = () => {
   // Array de objetos para Experiencia
   const experienceData = [
     {
-      title: "Desarrollador Backend / Fullstack | Corporación Universitaria Adventista",
+      title:
+        "Desarrollador Backend / Fullstack | Corporación Universitaria Adventista",
       date: "Feb 2024 – Presente · Medellín",
       description: [
         "Optimización del rendimiento del frontend en un 30% mediante lazy loading, code splitting y memoización en React",
@@ -27,13 +29,13 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience">
+    <AnimatedSection id="experience">
       <h2 className="experience-title">Mi Experiencia</h2>
 
       <Row xs={1} sm={1} md={1} className="g-4">
         {experienceData.map((item, index) => (
           <Col key={index}>
-            <Card className="experience-card">
+            <Card className="card experience-card interactive-card">
               <Card.Body>
                 <Card.Title className="experience-card-title">
                   {item.title}
@@ -53,7 +55,7 @@ const Experience = () => {
           </Col>
         ))}
       </Row>
-    </section>
+    </AnimatedSection>
   );
 };
 

@@ -1,4 +1,5 @@
 import "../css/interests.css";
+import AnimatedSection from "./AnimatedSection";
 
 const Interests = () => {
   // Array de intereses o pasatiempos
@@ -36,17 +37,17 @@ const Interests = () => {
   ];
 
   return (
-    <section id="interests">
+    <AnimatedSection id="interests">
       <h2>Intereses o Pasatiempos</h2>
       <div className="interests-container">
         {interestsData.map((interest, index) => (
-          <div className="interest-card" key={index}>
+          <div className="card interest-card interactive-card" key={index}>
             <h3>{interest.title}</h3>
             <p>{interest.description}</p>
           </div>
         ))}
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 
