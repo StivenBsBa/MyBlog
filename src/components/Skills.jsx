@@ -1,18 +1,11 @@
 import {
-  useInView,
   FaHtml5,
   FaCss3Alt,
   FaJs,
   FaReact,
-  FaBootstrap,
-  FaFigma,
   FaNodeJs,
-  FaJava,
   FaPython,
-  FaDatabase,
   FaGit,
-  FaGithub,
-  FaMicrosoft,
   FaDocker,
   FaCodeBranch,
   FaUsers,
@@ -20,7 +13,6 @@ import {
   FaCode,
   FaCube,
   FaGlobe,
-  FaGem,
 } from "react-icons/fa";
 
 import { SiRedux, SiPostman, SiNodedotjs } from "react-icons/si";
@@ -35,6 +27,7 @@ import {
 
 import "../css/Skills.css";
 import AnimatedSection from "./AnimatedSection";
+import { useInView } from "react-intersection-observer";
 
 const SkillCategory = ({ title, children }) => {
   const { ref, inView } = useInView({
