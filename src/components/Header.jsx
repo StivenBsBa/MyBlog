@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "../css/Header.css";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -12,12 +15,40 @@ const Header = () => {
     setMenuOpen(false);
   };
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleNavLinkClick = (e, id) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    closeMenu();
+
+    if (location.pathname === "/MyBlog/" || location.pathname === "/") {
+      // If already on the home page, just scroll
+      scrollToSection(id);
+    } else {
+      // If on another page, navigate to home and then scroll
+      navigate("/", { state: { scrollTo: id } });
+    }
+  };
+
+  useEffect(() => {
+    if (location.state && location.state.scrollTo) {
+      scrollToSection(location.state.scrollTo);
+      // Clear the state after scrolling to prevent re-scrolling on subsequent renders
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }, [location]);
+
   return (
-    <nav className="navbar navbar-expand-lg fixed-top bg-white">
+    <nav className="navbar navbar-expand-lg fixed-top bg-custom-dark">
       <div className="container-fluid">
-        <a className="navbar-brand text-dark" href="/MyBlog">
+        <Link className="navbar-brand text-white" to="/">
           Mi Blog
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -35,48 +66,48 @@ const Header = () => {
           id="navbarNavAltMarkup"
         >
           <div className="navbar-nav ms-auto">
-            <a
-              className="nav-link text-dark"
-              href="#about"
-              onClick={closeMenu}
+            <Link
+              className="nav-link text-white"
+              to="/"
+              onClick={(e) => handleNavLinkClick(e, "about")}
             >
               Sobre mí
-            </a>
-            <a
-              className="nav-link text-dark"
-              href="#education"
-              onClick={closeMenu}
+            </Link>
+            <Link
+              className="nav-link text-white"
+              to="/"
+              onClick={(e) => handleNavLinkClick(e, "education")}
             >
               Educación
-            </a>
-            <a
-              className="nav-link text-dark"
-              href="#experience"
-              onClick={closeMenu}
+            </Link>
+            <Link
+              className="nav-link text-white"
+              to="/"
+              onClick={(e) => handleNavLinkClick(e, "experience")}
             >
               Experiencia
-            </a>
-            <a
-              className="nav-link text-dark"
-              href="#skills"
-              onClick={closeMenu}
+            </Link>
+            <Link
+              className="nav-link text-white"
+              to="/"
+              onClick={(e) => handleNavLinkClick(e, "skills")}
             >
               Habilidades
-            </a>
-            <a
-              className="nav-link text-dark"
-              href="#portfolio"
-              onClick={closeMenu}
+            </Link>
+            <Link
+              className="nav-link text-white"
+              to="/"
+              onClick={(e) => handleNavLinkClick(e, "portfolio")}
             >
               Portafolio
-            </a>
-            <a
-              className="nav-link text-dark"
-              href="#interests"
-              onClick={closeMenu}
+            </Link>
+            <Link
+              className="nav-link text-white"
+              to="/"
+              onClick={(e) => handleNavLinkClick(e, "interests")}
             >
               Intereses
-            </a>
+            </Link>
           </div>
         </div>
       </div>

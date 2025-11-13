@@ -3,12 +3,12 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-light text-dark py-4 mt-auto">
+    <footer className="bg-custom-dark text-white py-4 mt-auto">
       <Container>
         <Row className="text-center">
           <Col>
             <p className="footer-text">
-              El único modo de hacer un gran trabajo es amar lo que haces.
+              La victoria completa se logra cuando el enemigo se rinde sin luchar.
             </p>
           </Col>
         </Row>
@@ -16,7 +16,7 @@ const Footer = () => {
           <Col>
             <a
               href="https://www.linkedin.com/in/brayanstiven/"
-              className="text-dark mx-3"
+              className="text-white mx-3"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -25,7 +25,7 @@ const Footer = () => {
             </a>
             <a
               href="https://github.com/StivenBsBa"
-              className="text-dark mx-3"
+              className="text-white mx-3"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
