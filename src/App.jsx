@@ -14,7 +14,6 @@ function App() {
         <Header />{" "}
         <Routes>
           <Route path="/" element={<Inicio />} />
-          <Route path="/footer" element={<Footer />} />
           <Route path="/localroot" element={<LocalrootPage />} />
           <Route path="/ia-platform" element={<IaPlatformPage />} />{" "}
         </Routes>

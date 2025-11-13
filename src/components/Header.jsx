@@ -13,9 +13,9 @@ const Header = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg fixed-top bg-dark">
+    <nav className="navbar navbar-expand-lg fixed-top bg-white">
       <div className="container-fluid">
-        <a className="navbar-brand text-white" href="/MyBlog">
+        <a className="navbar-brand text-dark" href="/MyBlog">
           Mi Blog
         </a>
         <button
@@ -36,42 +36,42 @@ const Header = () => {
         >
           <div className="navbar-nav ms-auto">
             <a
-              className="nav-link active text-white"
+              className="nav-link text-dark"
               href="#about"
               onClick={closeMenu}
             >
               Sobre mí
             </a>
             <a
-              className="nav-link text-white"
+              className="nav-link text-dark"
               href="#education"
               onClick={closeMenu}
             >
               Educación
             </a>
             <a
-              className="nav-link text-white"
+              className="nav-link text-dark"
               href="#experience"
               onClick={closeMenu}
             >
               Experiencia
             </a>
             <a
-              className="nav-link text-white"
+              className="nav-link text-dark"
               href="#skills"
               onClick={closeMenu}
             >
               Habilidades
             </a>
             <a
-              className="nav-link text-white"
+              className="nav-link text-dark"
               href="#portfolio"
               onClick={closeMenu}
             >
               Portafolio
             </a>
             <a
-              className="nav-link text-white"
+              className="nav-link text-dark"
               href="#interests"
               onClick={closeMenu}
             >

@@ -8,8 +8,12 @@
 .about-container {
   display: flex;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 4rem auto; /* Added margin-bottom */
   align-items: center;
+  background-color: #ffffff; /* White background for the section */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  padding: 2rem;
 }
 
 .about-image {
@@ -22,6 +26,7 @@
   max-width: 250px;
   height: auto;
   border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for image */
 }
 
 .about-content {
@@ -29,17 +34,18 @@
 }
 
 .about h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.2rem; /* Slightly larger for emphasis */
+  margin-bottom: 1.5rem;
   text-align: center;
-  color: #ffffff;
-  font-weight: bold;
+  color: #333333; /* Dark text */
+  font-weight: 600; /* Semi-bold */
 }
 
 .about p {
-  font-size: 1.1rem;
+  font-size: 1rem; /* Slightly smaller for body text */
+  line-height: 1.6; /* Improved readability */
   margin-bottom: 1.5rem;
-  color: #ffffff;
+  color: #555555; /* Slightly lighter dark text */
   text-align: justify;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -51,22 +57,38 @@
 }
 
 .about ul li {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
-  color: #ffffff;
+  margin: 0.7rem 0;
+  font-size: 1rem;
+  color: #555555; /* Slightly lighter dark text */
+}
+
+.about ul li strong {
+  color: #333333; /* Darker for strong text */
 }
 
 @media (max-width: 768px) {
   .about-container {
-    padding-top: 3rem;
-  }
-  .about-container {
     flex-direction: column;
     text-align: center;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .about-image {
     padding-right: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-image img {
+    max-width: 180px; /* Smaller image on mobile */
+  }
+
+  .about h2 {
+    font-size: 1.8rem;
+  }
+
+  .about p,
+  .about ul li {
+    font-size: 0.95rem;
   }
 }

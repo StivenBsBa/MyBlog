@@ -1,11 +1,17 @@
 .global {
-  background-color: #4b4b4b;
+  background-color: #f0f2f5; /* Light gray background */
   margin: 0;
   padding: 0;
-  color: #ffffff;
-  font-family: "Times New Roman", Times, serif, Verdana, sans-serif;
+  color: #333333; /* Dark gray text for readability */
+  font-family: 'Inter', sans-serif; /* Modern sans-serif font */
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px; /* Slightly rounded corners */
 }
 
 * {
   box-sizing: border-box;
 }
+

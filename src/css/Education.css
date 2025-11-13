@@ -2,23 +2,23 @@
   background-color: transparent;
   padding: 25px 20px;
   border-radius: 10px;
+  margin-bottom: 4rem; /* Added margin-bottom */
 }
 
 .education-title {
-  font-family: "Arial", sans-serif;
-  color: #ffffff;
-  font-weight: bold;
-  text-align: left;
-  margin-bottom: 20px;
+  color: #333333; /* Dark text */
+  font-weight: 600; /* Semi-bold */
+  text-align: center; /* Centered title */
+  margin-bottom: 2.5rem; /* Increased margin */
+  font-size: 2.2rem; /* Larger font size */
 }
 
 .education-subtitle {
-  font-family: "Arial", sans-serif;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem; /* Adjusted margin */
   font-size: 1.8rem;
-  font-weight: bold;
-  color: #e0e0e0;
+  font-weight: 500; /* Medium weight */
+  color: #333333; /* Dark text */
 }
 
 .education-card {
@@ -27,40 +27,45 @@
   justify-content: flex-start;
   align-items: flex-start;
   border-radius: 10px;
-  border: 1px solid #333;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #1e1e1e;
+  border: 1px solid #e0e0e0; /* Lighter border */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+  background-color: #ffffff; /* White background */
   padding: 20px;
   height: 100%;
   min-height: 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.education-card:hover {
+  transform: translateY(-5px); /* Subtle lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
 .education-card-title {
   font-size: 1.2rem;
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 15px;
+  font-weight: 600; /* Semi-bold */
+  color: #333333; /* Dark text */
+  margin-bottom: 10px; /* Adjusted margin */
   text-align: left;
 }
 
 .education-card-subtitle {
-  font-size: 0.9rem;
-  color: #a0a0a0; /* Un gris más suave para la metadata */
-  margin-bottom: 10px;
+  font-size: 0.95rem; /* Slightly larger */
+  color: #777777; /* Medium gray */
+  margin-bottom: 8px; /* Adjusted margin */
   text-align: left;
 }
 
 .education-card-location {
-  font-size: 0.9rem;
-  color: #a0a0a0;
-  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #777777; /* Medium gray */
+  margin-bottom: 8px;
   text-align: left;
 }
 
 .education-card-description {
   font-size: 0.9rem;
-  color: #c0c0c0; /* Un gris claro para el cuerpo del texto */
+  color: #555555; /* Darker gray for body text */
   line-height: 1.6;
   text-align: left;
 }
@@ -74,12 +79,20 @@
   height: 100%;
 }
 
+.education-container,
 .certificate-container {
-  padding-top: 2rem;
+  margin-bottom: 2rem; /* Space between education and certificates */
 }
 
 @media (max-width: 576px) {
   .education-card {
     margin-bottom: 20px;
+  }
+  .education-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  .education-subtitle {
+    font-size: 1.5rem;
   }
 }

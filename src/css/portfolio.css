@@ -4,14 +4,15 @@
   text-align: center;
   background-color: transparent;
   border-radius: 10px;
-  margin: 20px 0;
+  margin-bottom: 4rem; /* Adjusted margin */
 }
 
 #portfolio h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 2.2rem; /* Adjusted font size */
+  margin-bottom: 2.5rem; /* Adjusted margin */
+  color: #333333; /* Dark text */
+  font-weight: 600; /* Semi-bold */
+  text-shadow: none; /* Removed text-shadow */
 }
 
 /* Contenedor de las tarjetas */
@@ -25,12 +26,17 @@
 
 /* Estilo para cada tarjeta */
 .portfolio-card {
-  background-color: #1e1e1e;
-  border: 1px solid #333;
+  background-color: #ffffff; /* White background */
+  border: 1px solid #e0e0e0; /* Lighter border */
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Lighter shadow */
   padding: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px); /* Subtle lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
 }
 
 /* Estilo para el encabezado de la tarjeta (título y año) */
@@ -42,19 +48,27 @@
 }
 
 .portfolio-card h3 {
-  font-size: 1.8rem;
-  color: #ffffff;
+  font-size: 1.4rem; /* Adjusted font size */
+  color: #333333; /* Dark text */
+  font-weight: 600; /* Semi-bold */
 }
 
 .project-year {
-  font-size: 1rem;
-  color: #aaaaaa;
-  font-style: italic;
+  font-size: 0.9rem; /* Adjusted font size */
+  color: #777777; /* Medium gray */
+  font-style: normal; /* Removed italic */
+}
+
+/* Tecnologías */
+.portfolio-card-technologies {
+  font-size: 0.95rem;
+  color: #555555;
+  margin-bottom: 10px;
 }
 
 /* Descripción de la tarjeta */
 .portfolio-card-description {
-  color: #c0c0c0;
+  color: #555555; /* Darker gray */
   margin-bottom: 20px;
   font-size: 1rem;
   line-height: 1.5;
@@ -69,11 +83,12 @@
   padding: 10px 20px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .view-project-button:hover {
   background-color: #0056b3;
+  transform: translateY(-2px); /* Subtle lift on hover */
 }
 
 /* Mensaje de error */
@@ -82,4 +97,23 @@
   color: red;
   font-weight: bold;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  #portfolio h2 {
+    font-size: 1.8rem;
+  }
+  .portfolio-container {
+    padding: 10px;
+  }
+  .portfolio-card h3 {
+    font-size: 1.2rem;
+  }
+  .project-year {
+    font-size: 0.8rem;
+  }
+  .portfolio-card-technologies,
+  .portfolio-card-description {
+    font-size: 0.9rem;
+  }
 }
