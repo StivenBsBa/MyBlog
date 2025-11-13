@@ -8,7 +8,7 @@ const Footer = () => {
         <Row className="text-center">
           <Col>
             <p className="footer-text">
-              La victoria completa se logra cuando el enemigo se rinde sin luchar.
+              "Si conoces al enemigo y te conoces a ti mismo, no temas el resultado de cien batallas."
             </p>
           </Col>
         </Row>

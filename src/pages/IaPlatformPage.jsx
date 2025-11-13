@@ -1,9 +1,32 @@
-import React from 'react';
-import '../css/portfolio.css'; // Assuming some shared styling
+import React, { useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import '../css/IaPlatformPage.css'; // Import the new dedicated CSS
 
 const IaPlatformPage = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleBackToPortfolio = () => {
+    navigate("/", { state: { scrollTo: "portfolio" } });
+  };
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    if (location.state && location.state.scrollTo) {
+      scrollToSection(location.state.scrollTo);
+      // Clear the state after scrolling to prevent re-scrolling on subsequent renders
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }, [location]);
+
   return (
-    <section id="ia-platform-page" className="project-detail-page">
+    <section id="ia-platform-page" className="ia-platform-page">
       <div className="container">
         <h1>IA-Platform - Chatbot de Finanzas con IA</h1>
         <p className="project-intro">
@@ -30,7 +53,7 @@ const IaPlatformPage = () => {
           <h2>Tecnologías Clave:</h2>
           <p>Inteligencia Artificial, Chatbot, Finanzas, Visualización de Datos, Procesamiento de Lenguaje Natural.</p>
         </div>
-        {/* Puedes añadir más secciones como capturas de pantalla, demos, etc. */}
+        <button onClick={handleBackToPortfolio} className="back-button">Regresar a Portafolio</button>
       </div>
     </section>
   );

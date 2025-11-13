@@ -1,5 +1,5 @@
 .bg-custom-dark {
-  background-color: #2c3e50 !important; /* Dark blue-gray */
+  background-color: #1a202c !important; /* Modern dark blue-gray */
 }
 
 /* Estilo para el botón hamburguesa */
@@ -15,7 +15,7 @@
 /* Ajusta el color del icono cuando está activo o en hover */
 .navbar-toggler:hover .navbar-toggler-icon,
 .navbar-toggler:focus .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='#cccccc' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='#a0aec0' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3C/svg%3E");
   /* Cambia a un color gris claro en hover */
 }
 
@@ -31,7 +31,7 @@
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: #007bff; /* Accent color, can be customized */
+  background-color: #a0aec0; /* Subtle light gray accent color */
   transition: width 0.3s ease;
 }
 
@@ -40,6 +40,6 @@
 }
 
 .navbar-nav .nav-link:hover {
-  color: #007bff !important; /* Accent color on hover */
+  color: #a0aec0 !important; /* Light gray accent color on hover */
 }
 
