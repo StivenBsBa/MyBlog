@@ -1,94 +1,138 @@
-/* Estilo general para la sección de habilidades */
+/* Sección general */
 #skills {
-  padding: 2rem;
-  background-color: transparent; /* El fondo lo manejará el body o un contenedor global */
+  padding: 3rem 2rem;
+  background-color: transparent;
   border-radius: 10px;
-  margin-bottom: 4rem; /* Added margin-bottom */
+  margin-bottom: 4rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Título de la sección de habilidades */
+/* Título principal */
 #skills h2 {
   text-align: center;
-  font-size: 2.2rem; /* Adjusted font size */
-  margin-bottom: 2.5rem; /* Adjusted margin */
-  color: #333333; /* Dark text */
-  font-weight: 600; /* Semi-bold */
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+  color: #222222;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  position: relative;
 }
 
-/* Lista de categorías */
+#skills h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #007bff;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Contenedor de categorías */
 .skills-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 2rem;
+  justify-items: center;
 }
 
-/* Estilo de cada categoría */
+/* Cada categoría */
 .category {
-  background-color: #ffffff; /* White background */
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0; /* Lighter border */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+  background-color: #ffffff;
+  padding: 2rem 1.8rem;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 340px;
+  text-align: left;
 }
 
 .category:hover {
-  transform: translateY(-5px); /* Subtle lift on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
 }
 
-/* Título dentro de las categorías */
+/* Título de categoría */
 .category h3 {
-  font-size: 1.6rem;
-  color: #333333; /* Dark text */
-  font-weight: 600; /* Semi-bold */
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333333;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
   text-align: center;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.5rem;
 }
 
-/* Estilo de la lista de habilidades dentro de las categorías */
+/* Lista de habilidades */
 .category ul {
-  list-style-type: none;
+  list-style: none;
   padding-left: 0;
+  margin: 0;
 }
 
 .category ul li {
   font-size: 1rem;
-  color: #555555; /* Darker gray for text */
-  margin-bottom: 0.5rem;
+  color: #555555;
+  margin-bottom: 0.8rem;
   display: flex;
   align-items: center;
-  gap: 10px; /* Espacio entre el ícono y el texto */
+  gap: 12px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.category ul li:hover {
+  color: #007bff;
+  transform: translateX(4px);
 }
 
 .category ul li svg {
-  color: #007bff; /* Accent color for icons */
+  color: #007bff;
+  flex-shrink: 0;
 }
 
-/* Marcador de lista con color azul */
-.category ul li::before {
-  content: ""; /* Eliminamos el marcador de lista por defecto */
+/* Animación de entrada */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Estilos para pantallas pequeñas */
-@media (max-width: 768px) {
-  #skills {
-    padding: 1rem;
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Responsividad */
+@media (max-width: 992px) {
+  #skills h2 {
+    font-size: 2rem;
   }
 
-  #skills h2 {
-    font-size: 1.8rem;
+  .category h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #skills {
+    padding: 2rem 1rem;
   }
 
   .skills-list {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
-  .category h3 {
-    font-size: 1.4rem;
+  .category {
+    padding: 1.5rem;
+    max-width: 100%;
   }
 
   .category ul li {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 }

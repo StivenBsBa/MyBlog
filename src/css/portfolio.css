@@ -1,77 +1,95 @@
-/* Estilo general para el contenedor del portafolio */
+/* Sección general del portafolio */
 #portfolio {
-  padding: 20px;
-  text-align: center;
+  padding: 3rem 2rem;
   background-color: transparent;
+  text-align: center;
   border-radius: 10px;
-  margin-bottom: 4rem; /* Adjusted margin */
+  margin-bottom: 4rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* Título principal */
 #portfolio h2 {
-  font-size: 2.2rem; /* Adjusted font size */
-  margin-bottom: 2.5rem; /* Adjusted margin */
-  color: #333333; /* Dark text */
-  font-weight: 600; /* Semi-bold */
-  text-shadow: none; /* Removed text-shadow */
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+  color: #222;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+#portfolio h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #007bff;
+  margin: 10px auto 0;
+  border-radius: 2px;
 }
 
 /* Contenedor de las tarjetas */
 .portfolio-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 2rem;
+  justify-items: center;
 }
 
-/* Estilo para cada tarjeta */
+/* Tarjeta individual */
 .portfolio-card {
-  background-color: #ffffff; /* White background */
-  border: 1px solid #e0e0e0; /* Lighter border */
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Lighter shadow */
-  padding: 20px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 1.8rem;
+  width: 100%;
+  max-width: 360px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .portfolio-card:hover {
-  transform: translateY(-5px); /* Subtle lift on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+  transform: translateY(-6px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para el encabezado de la tarjeta (título y año) */
+/* Encabezado de tarjeta (título + año) */
 .portfolio-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
 .portfolio-card h3 {
-  font-size: 1.4rem; /* Adjusted font size */
-  color: #333333; /* Dark text */
-  font-weight: 600; /* Semi-bold */
+  font-size: 1.4rem;
+  color: #333;
+  font-weight: 600;
+  margin: 0;
 }
 
 .project-year {
-  font-size: 0.9rem; /* Adjusted font size */
-  color: #777777; /* Medium gray */
-  font-style: normal; /* Removed italic */
+  font-size: 0.9rem;
+  color: #888;
 }
 
-/* Tecnologías */
+/* Tecnologías usadas */
 .portfolio-card-technologies {
   font-size: 0.95rem;
-  color: #555555;
-  margin-bottom: 10px;
+  color: #007bff;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
 }
 
-/* Descripción de la tarjeta */
+/* Descripción */
 .portfolio-card-description {
-  color: #555555; /* Darker gray */
-  margin-bottom: 20px;
+  color: #555;
   font-size: 1rem;
   line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
 
 /* Botón */
@@ -79,41 +97,61 @@
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   padding: 10px 20px;
-  cursor: pointer;
   font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 500;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .view-project-button:hover {
   background-color: #0056b3;
-  transform: translateY(-2px); /* Subtle lift on hover */
+  transform: translateY(-2px);
 }
 
-/* Mensaje de error */
+/* Error message */
 .error-message {
   margin-top: 20px;
-  color: red;
-  font-weight: bold;
+  color: #d9534f;
+  font-weight: 600;
   text-align: center;
 }
 
+/* Responsividad */
+@media (max-width: 992px) {
+  #portfolio h2 {
+    font-size: 2rem;
+  }
+
+  .portfolio-card {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
+  #portfolio {
+    padding: 2rem 1rem;
+  }
+
   #portfolio h2 {
     font-size: 1.8rem;
   }
+
   .portfolio-container {
-    padding: 10px;
+    grid-template-columns: 1fr;
   }
+
   .portfolio-card h3 {
     font-size: 1.2rem;
   }
+
   .project-year {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
-  .portfolio-card-technologies,
+
   .portfolio-card-description {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 }

@@ -1,77 +1,138 @@
+/* === SECCIÓN PRINCIPAL === */
 #experience {
   background-color: transparent;
-  padding: 25px 20px; /* Adjusted padding */
-  border-radius: 10px;
-  margin-bottom: 4rem; /* Added margin-bottom */
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 5rem;
 }
 
-/* Títulos de las secciones */
+/* === TÍTULO PRINCIPAL === */
 .experience-title {
-  color: #333333; /* Dark text */
-  font-weight: 600; /* Semi-bold */
+  color: #2c3e50;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 2.5rem; /* Adjusted margin */
-  font-size: 2.2rem; /* Larger font size */
+  margin-bottom: 3rem;
+  font-size: 2.4rem;
+  letter-spacing: 0.5px;
+  position: relative;
 }
 
-/* Diseño y estilo para las tarjetas */
+.experience-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #007bff, #00c3ff);
+  margin: 0.8rem auto 0;
+  border-radius: 2px;
+}
+
+/* === TARJETAS === */
 .experience-card {
-  border-radius: 10px;
-  border: 1px solid #e0e0e0; /* Lighter border */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Lighter shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #ffffff; /* White background */
+  border-radius: 12px;
+  border: 1px solid #e0e4ea;
+  background-color: #ffffff;
+  padding: 1.8rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
 }
 
 .experience-card:hover {
-  transform: translateY(-5px); /* Subtle lift on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.12);
+  border-color: #007bff;
 }
 
-/* Estilo para los títulos dentro de las tarjetas */
+/* === BARRA LATERAL AZUL SUTIL EN HOVER === */
+.experience-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(180deg, #007bff, #00c3ff);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px 0 0 12px;
+}
+
+.experience-card:hover::before {
+  opacity: 1;
+}
+
+/* === TEXTOS DE LA TARJETA === */
 .experience-card-title {
-  font-size: 1.2rem;
-  font-weight: 600; /* Semi-bold */
-  color: #333333; /* Dark text */
-  margin-bottom: 10px; /* Adjusted margin */
-  text-align: left;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
 }
 
-/* Subtitle (date) */
-.experience-card .text-muted {
+.experience-card-date {
   font-size: 0.95rem;
-  color: #777777 !important; /* Medium gray, override Bootstrap */
-  margin-bottom: 10px;
+  color: #6c757d;
+  margin-bottom: 1rem;
+  display: block;
 }
 
-/* Descripción en las tarjetas */
+/* === DESCRIPCIÓN === */
 .experience-card-description {
-  font-size: 0.9rem;
-  color: #555555; /* Darker gray for body text */
+  font-size: 0.95rem;
+  color: #444;
   line-height: 1.6;
+  text-align: justify;
 }
 
 .experience-card-description ul {
-  padding-left: 20px; /* Indent list items */
+  list-style-type: disc;
+  padding-left: 1.5rem;
   margin-bottom: 0;
 }
 
 .experience-card-description li {
-  margin-bottom: 5px;
+  margin-bottom: 0.6rem;
+  position: relative;
+  color: #555;
 }
 
-/* Espaciado entre las tarjetas */
-.experience-card .card-body {
-  padding: 20px;
+/* === ANIMACIÓN TARJETA INTERACTIVA === */
+.interactive-card {
+  cursor: pointer;
 }
 
-/* Asegura margen en pantallas pequeñas */
-@media (max-width: 576px) {
-  .experience-card {
-    margin-bottom: 20px;
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  #experience {
+    padding: 2.5rem 1rem;
   }
+
+  .experience-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .experience-card {
+    padding: 1.5rem;
+  }
+
+  .experience-card-title {
+    font-size: 1.15rem;
+  }
+
+  .experience-card-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
   .experience-title {
     font-size: 1.8rem;
-    margin-bottom: 2rem;
+  }
+
+  .experience-card-title {
+    font-size: 1.1rem;
   }
 }
