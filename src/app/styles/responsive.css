@@ -1,0 +1,162 @@
+@media (max-width: 64rem) {
+  .header__toggle { display: inline-grid; }
+
+  .header__nav {
+    position: absolute;
+    top: calc(100% + 0.6rem);
+    right: var(--gutter);
+    left: var(--gutter);
+    display: grid;
+    visibility: hidden;
+    padding: 0.75rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    background: white;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    transform: translateY(-0.5rem);
+    transition: opacity 160ms ease, transform 160ms ease, visibility 160ms;
+  }
+
+  .header__nav--open { visibility: visible; opacity: 1; transform: none; }
+  .nav-link { width: 100%; padding: 0.8rem 1rem; text-align: left; }
+
+  .hero__grid { grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.65fr); gap: 2.5rem; }
+  .hero__code-card { right: -1rem; }
+
+  .about-grid,
+  .split-layout,
+  .contact-card,
+  .project-detail__header-grid { grid-template-columns: 1fr; }
+
+  .about-grid,
+  .split-layout { gap: var(--content-gap); }
+
+  .about-grid .section-heading,
+  .split-layout .section-heading { margin-bottom: 0; }
+
+  .contact-card__actions { justify-content: flex-start; }
+  .resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 56rem) {
+  .project-detail__body { grid-template-columns: 1fr; gap: 2.5rem; }
+  .project-detail__body aside { width: 100%; }
+
+  .project-detail__highlights,
+  .project-detail__categories,
+  .project-detail__navigation { grid-column: auto; }
+}
+
+@media (max-width: 46rem) {
+  :root {
+    --header-height: 4.25rem;
+    --section-space: clamp(4rem, 16vw, 5.5rem);
+    --content-gap: 2.5rem;
+    --radius-lg: 1.5rem;
+  }
+
+  .brand > span:last-child { display: none; }
+
+  .hero { padding-block: 3.5rem 5rem; }
+  .hero__grid { grid-template-columns: 1fr; gap: 3rem; }
+  .hero__portrait { width: min(88%, 24rem); }
+  .hero__code-card { right: -0.5rem; bottom: 1rem; }
+  .hero__facts { gap: 1.5rem; margin-top: 2rem; }
+
+  .education-grid,
+  .technology-grid,
+  .projects-grid,
+  .resource-grid,
+  .project-detail__highlights ol,
+  .project-detail__categories > div { grid-template-columns: 1fr; }
+
+  .technology-group,
+  .technology-group:nth-child(odd),
+  .technology-group:nth-child(even) {
+    grid-template-columns: 1fr;
+    padding: 1.75rem 0;
+    border-right: 0;
+  }
+
+  .timeline { gap: 2.5rem; }
+  .timeline__item header { flex-direction: column; gap: 0.4rem; }
+  .timeline__item .timeline__meta { flex: auto; }
+
+  .project-card__visual { min-height: 14rem; }
+  .resource-card { min-height: 15rem; padding: 1.5rem; }
+  .resource-card__status { margin-bottom: 3rem; }
+
+  .contact-card { padding: 2rem 1.5rem; }
+  .contact-card__actions,
+  .contact-card__actions .button { width: 100%; }
+
+  .footer__inner {
+    min-height: auto;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 2rem;
+  }
+
+  .project-detail__hero { padding-block: 3.5rem; }
+  .back-link { margin-bottom: 2.75rem; }
+
+  .project-detail__highlights li,
+  .project-detail__highlights li:nth-child(odd),
+  .project-detail__highlights li:nth-child(even) {
+    min-height: 0;
+    padding: 1.25rem 0;
+    border-right: 0;
+  }
+
+  .project-detail__categories article { padding: 1.5rem; }
+}
+
+@media (max-width: 30rem) {
+  h1 { font-size: clamp(2.65rem, 13vw, 3.25rem); }
+  h2 { font-size: clamp(2rem, 10vw, 2.65rem); }
+
+  .hero { padding-top: 3rem; }
+  .hero__actions,
+  .hero__actions .button { width: 100%; }
+
+  .hero__facts { display: grid; grid-template-columns: 1fr 1fr; }
+  .hero__portrait { width: 100%; }
+
+  .hero__code-card {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: calc(100% - 1.5rem);
+    min-width: 0;
+    margin: -2rem auto 0;
+  }
+
+  .education-card,
+  .project-card__content,
+  .project-detail__body aside { padding: 1.25rem; }
+
+  .footer__copy { max-width: 34ch; }
+}
+
+@media (hover: none) {
+  .button:hover,
+  .icon-button:hover,
+  .project-card:hover { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal { opacity: 1; transform: none; }
+}

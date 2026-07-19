@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stivenbsba.github.io/MyBlog/sitemap.xml
