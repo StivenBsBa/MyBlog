@@ -84,12 +84,13 @@
 .timeline {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
   gap: 0.85rem;
 }
 
 .timeline__item {
+  display: flex;
   min-width: 0;
+  flex-direction: column;
   padding: clamp(1rem, 2vw, 1.45rem);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
@@ -98,7 +99,7 @@
 
 .timeline__item header { margin-bottom: 1rem; }
 .timeline__item header .timeline__meta { margin-top: 0.6rem; }
-.timeline__item > .timeline__meta { margin: 1rem 0 0; }
+.timeline__item > .timeline__meta { margin: auto 0 0; padding-top: 0.8rem; }
 
 .timeline__item h3 { margin-bottom: 0.35rem; }
 .timeline__item header p { margin-bottom: 0; color: var(--color-accent-dark); font-weight: 700; }
@@ -269,4 +270,5 @@
 
 .contact-card h2 { margin-bottom: 1rem; }
 .contact-card p:not(.eyebrow) { max-width: 38rem; margin-bottom: 0; color: #c6d8d1; }
+.contact-card p:not(.eyebrow) + p { margin-top: 0.5rem; }
 .contact-card__actions { justify-content: flex-end; }

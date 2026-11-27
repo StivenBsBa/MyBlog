@@ -130,10 +130,8 @@
   border-top: 1px solid var(--color-line);
 }
 
-.article-body {
-  max-width: 76ch;
-  padding-block: var(--section-space);
-}
+.article-column { max-width: 76ch; }
+.article-body { padding-block: var(--section-space); }
 
 .article-body section + section { margin-top: var(--content-gap); }
 .article-body h2 { margin-bottom: 0.45rem; font-size: clamp(1.4rem, 3vw, 1.85rem); }

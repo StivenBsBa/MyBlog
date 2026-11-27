@@ -61,7 +61,7 @@ await writeRoute(home.path, createShell(home));
 for (const project of projects) {
   const overview = project.overview.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("");
   const highlights = project.highlights.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
-  const content = `<main class="container article-body">
+  const content = `<main class="container article-column article-body">
     <article>
       <h1>${escapeHtml(project.title)}</h1>
       <p>${escapeHtml(project.status)} · ${project.year}</p>
@@ -80,7 +80,7 @@ for (const article of articles) {
   const sections = article.sections.map(({ title, text }) =>
     `<section><h2>${escapeHtml(title)}</h2><p>${escapeHtml(text)}</p></section>`,
   ).join("");
-  const content = `<main class="container article-body"><article><h1>${escapeHtml(article.title)}</h1><p>${escapeHtml(article.summary)}</p>${sections}</article></main>`;
+  const content = `<main class="container article-column article-body"><article><h1>${escapeHtml(article.title)}</h1><p>${escapeHtml(article.summary)}</p>${sections}</article></main>`;
   await writeRoute(article.path, createShell(getArticleMeta(article), content));
 }
 
