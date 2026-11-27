@@ -1,4 +1,5 @@
 import { Link, useLocation, useParams } from "react-router-dom";
+import { getProjectMeta } from "../../../config/site";
 import { getProjectBySlug } from "../data/projects";
 import { Icon } from "../../../shared/components/Icon";
 import { useDocumentMeta } from "../../../shared/hooks/useDocumentMeta";
@@ -9,25 +10,11 @@ export default function ProjectDetailPage() {
   const location = useLocation();
   const project = getProjectBySlug(params.slug ?? "");
 
-  useDocumentMeta({
-    title: project ? `${project.title} | Brayan Barajas` : "Proyecto no encontrado",
-    description: project?.summary ?? "El proyecto solicitado no está disponible.",
-    path: project?.path ?? location.pathname,
-    noIndex: !project,
-    structuredData: project
-      ? {
-          "@context": "https://schema.org",
-          "@type": "SoftwareSourceCode",
-          name: project.title,
-          description: project.summary,
-          url: `https://stivenbsba.github.io/MyBlog${project.path}`,
-          programmingLanguage: project.technologies,
-          author: {
-            "@type": "Person",
-            name: "Brayan Barajas",
-          },
-        }
-      : undefined,
+  useDocumentMeta(project ? getProjectMeta(project) : {
+    title: "Proyecto no encontrado",
+    description: "El proyecto solicitado no está disponible.",
+    path: location.pathname,
+    noIndex: true,
   });
 
   if (!project) return <NotFoundContent />;
@@ -50,12 +37,8 @@ export default function ProjectDetailPage() {
               <dd>{project.year}</dd>
             </div>
             <div>
-              <dt>Rol</dt>
-              <dd>Full Stack Developer</dd>
-            </div>
-            <div>
               <dt>Estado</dt>
-              <dd>Proyecto de portafolio</dd>
+              <dd>{project.status}</dd>
             </div>
           </dl>
         </div>
@@ -65,6 +48,7 @@ export default function ProjectDetailPage() {
         <section aria-labelledby="project-overview-title">
           <p className="eyebrow">Contexto</p>
           <h2 id="project-overview-title">Acerca del proyecto</h2>
+          <p>{project.contribution}</p>
           {project.overview.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -80,8 +64,7 @@ export default function ProjectDetailPage() {
         </aside>
 
         <section className="project-detail__highlights" aria-labelledby="project-highlights-title">
-          <p className="eyebrow">Funcionalidades</p>
-          <h2 id="project-highlights-title">Puntos clave</h2>
+          <h2 id="project-highlights-title">Alcance del proyecto</h2>
           <ol>
             {project.highlights.map((highlight, index) => (
               <li key={highlight}>
@@ -95,7 +78,7 @@ export default function ProjectDetailPage() {
         {project.categories ? (
           <section className="project-detail__categories" aria-labelledby="project-categories-title">
             <p className="eyebrow">Cobertura</p>
-            <h2 id="project-categories-title">Contenido organizado para descubrir</h2>
+            <h2 id="project-categories-title">Categorías del catálogo</h2>
             <div>
               {project.categories.map((category) => (
                 <article key={category.title}>
@@ -112,6 +95,7 @@ export default function ProjectDetailPage() {
         ) : null}
 
         <nav className="project-detail__navigation" aria-label="Navegación del proyecto">
+          {project.repository && <a className="button button--secondary" href={project.repository}>Ver repositorio</a>}
           <Link className="button button--primary" to="/#proyectos">
             Explorar más proyectos <Icon name="arrow-right" />
           </Link>

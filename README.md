@@ -4,10 +4,10 @@ Portafolio personal construido con React, TypeScript y Vite. El proyecto present
 
 ## Desarrollo local
 
-Requiere Node.js 20.17 o superior. El proyecto incluye `.nvmrc` con la versión recomendada.
+Requiere Node.js 24 o superior. El proyecto incluye `.nvmrc` con la versión recomendada.
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -19,7 +19,7 @@ npm run check
 
 El comando ejecuta ESLint, comprobación estricta de TypeScript y build de producción.
 
-También genera y valida shells HTML para las rutas de proyecto. Esto permite que GitHub Pages
+También genera y valida shells HTML para proyectos y artículos y genera el sitemap desde esas mismas rutas. Esto permite que GitHub Pages
 entregue una respuesta `200` con canonical, Open Graph y datos estructurados correctos antes de
 que React tome el control de la navegación.
 
@@ -36,3 +36,10 @@ src/
 ```
 
 El despliegue a GitHub Pages se ejecuta automáticamente desde GitHub Actions al actualizar `main`. La salida se publica bajo `/MyBlog/` e incluye recuperación de rutas SPA.
+
+## Actualización de contenido
+
+- Perfil profesional y enlaces en `src/config/site.ts`.
+- Experiencia, formación, tecnologías y versiones de CV en `src/features/home/data/content.ts`.
+- Proyectos y notas en `src/features/projects/data/projects.ts` y `src/features/lab/data/articles.ts`. Agrega cada nota con un slug único, un resumen y secciones de texto.
+- Para habilitar una descarga, coloca el PDF autorizado en `src/assets/cv/` y asigna su nombre a `file` en la entrada correspondiente. Si el archivo falta, la interfaz muestra un estado pendiente.

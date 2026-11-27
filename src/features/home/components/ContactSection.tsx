@@ -8,14 +8,18 @@ export function ContactSection() {
       <div className="container contact-card">
         <div>
           <p className="eyebrow">Contacto</p>
-          <h2>¿Construimos algo útil?</h2>
+          <h2>Hablemos de tu proyecto</h2>
           <p>
             Estoy abierto a conversar sobre oportunidades, productos y colaboraciones donde
-            pueda aportar como {profile.role}.
+            pueda aportar desde desarrollo de software, backend e IA aplicada.
           </p>
+          <p>{profile.location}</p>
         </div>
 
         <div className="contact-card__actions">
+          <a className="button button--light" href={`mailto:${socialProfiles.email}`}>
+            {socialProfiles.email}
+          </a>
           <a
             className="button button--light"
             href={socialProfiles.linkedin}

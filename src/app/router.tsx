@@ -1,12 +1,14 @@
 /* eslint-disable react-refresh/only-export-components -- This module intentionally owns route-level lazy boundaries. */
 import { lazy, Suspense, type ReactNode } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
+import { projects } from "../features/projects/data/projects";
 import HomePage from "../features/home/pages/HomePage";
 import { Layout } from "../shared/components/Layout";
 
 const ProjectDetailPage = lazy(
   () => import("../features/projects/pages/ProjectDetailPage"),
 );
+const ArticlePage = lazy(() => import("../features/lab/pages/ArticlePage"));
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
 
 function PageLoader() {
@@ -32,14 +34,13 @@ export const router = createBrowserRouter(
           path: "proyectos/:slug",
           element: withSuspense(<ProjectDetailPage />),
         },
-        {
-          path: "localroot",
-          element: <Navigate to="/proyectos/localroot" replace />,
-        },
-        {
-          path: "ia-platform",
-          element: <Navigate to="/proyectos/ia-platform" replace />,
-        },
+        { path: "laboratorio/:slug", element: withSuspense(<ArticlePage />) },
+        ...projects.flatMap((project) =>
+          (project.aliases ?? []).map((path) => ({
+            path: path.slice(1),
+            element: <Navigate to={project.path} replace />,
+          })),
+        ),
         { path: "*", element: withSuspense(<NotFoundPage />) },
       ],
     },

@@ -5,17 +5,12 @@ import { SectionHeading } from "./SectionHeading";
 export function ExperienceSection() {
   return (
     <RevealSection id="experiencia">
-      <div className="container split-layout">
-        <SectionHeading
-          eyebrow="Experiencia"
-          title="Productos sólidos se construyen en equipo."
-          description="He trabajado entre frontend, backend y operaciones, buscando siempre que cada mejora técnica se traduzca en valor real."
-        />
+      <div className="container">
+        <SectionHeading title="Experiencia profesional" />
 
         <div className="timeline">
           {experience.map((item) => (
             <article className="timeline__item" key={`${item.company}-${item.role}`}>
-              <div className="timeline__marker" aria-hidden="true" />
               <header>
                 <div>
                   <h3>{item.role}</h3>
@@ -30,6 +25,7 @@ export function ExperienceSection() {
                   <li key={achievement}>{achievement}</li>
                 ))}
               </ul>
+              {item.technologies.length > 0 && <p className="timeline__meta">{item.technologies.join(" · ")}</p>}
             </article>
           ))}
         </div>
