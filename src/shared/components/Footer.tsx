@@ -8,7 +8,7 @@ export function Footer() {
         <div>
           <p className="footer__name">{profile.name}</p>
           <p className="footer__copy">
-            Diseño y desarrollo con atención al detalle. © {new Date().getFullYear()}
+            © {new Date().getFullYear()} · {profile.location}
           </p>
         </div>
 

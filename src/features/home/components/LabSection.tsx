@@ -1,26 +1,19 @@
+import { Link } from "react-router-dom";
 import { RevealSection } from "../../../shared/components/RevealSection";
-import { labResources } from "../data/content";
+import { articles } from "../../lab/data/articles";
 import { SectionHeading } from "./SectionHeading";
 
 export function LabSection() {
   return (
     <RevealSection className="section--surface" id="laboratorio">
       <div className="container">
-        <SectionHeading
-          eyebrow="Blog · Laboratorio · Recursos"
-          title="Aprender también es documentar."
-          description="Este espacio está creciendo para reunir notas técnicas, experimentos y recursos útiles para otros developers."
-        />
-
-        <div className="resource-grid">
-          {labResources.map((resource, index) => (
-            <article className="resource-card" key={resource.title}>
-              <span className="resource-card__number" aria-hidden="true">
-                0{index + 1}
-              </span>
-              <p className="resource-card__status">{resource.status}</p>
-              <h3>{resource.title}</h3>
-              <p>{resource.description}</p>
+        <SectionHeading title="Laboratorio técnico" description="Notas prácticas sobre backend e IA aplicada." />
+        <div className="lab-list">
+          {articles.map(({ path, title, summary, category }) => (
+            <article className="lab-entry" key={path}>
+              {category && <p className="eyebrow">{category}</p>}
+              <h3><Link className="text-link" to={path}>{title}</Link></h3>
+              <p>{summary}</p>
             </article>
           ))}
         </div>

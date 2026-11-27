@@ -83,28 +83,26 @@
 
 .section {
   padding-block: var(--section-space);
-  scroll-margin-top: var(--header-height);
+  border-top: 1px solid var(--color-line);
 }
 
 .section--surface { background: var(--color-surface); }
-.section--dark { color: white; background: var(--color-ink); }
-
-.reveal { opacity: 1; transform: none; }
 
 .js .reveal {
-  opacity: 0;
-  transform: translateY(1.5rem);
-  transition: opacity 650ms ease, transform 650ms ease;
+  transform: translateY(0.35rem);
+  transition: transform 240ms ease;
 }
 
-.js .reveal--visible { opacity: 1; transform: none; }
+.js .reveal--visible,
+.js .reveal:focus-within { transform: none; }
 
 .section-heading {
   max-width: 44rem;
   margin-bottom: var(--content-gap);
 }
 
-.section-heading h2 { margin-bottom: 1.25rem; }
+.section-heading h2 { margin-bottom: 0; }
+.section-heading h2 + p { margin-top: 0.55rem; }
 
 .section-heading > p:last-child:not(.eyebrow) {
   max-width: 38rem;
@@ -113,8 +111,6 @@
   font-size: 1.08rem;
 }
 
-.section--dark .section-heading > p:last-child:not(.eyebrow) { color: #aebcb7; }
-.section--dark .eyebrow,
 .contact-section .eyebrow,
 .project-detail__hero .eyebrow { color: #ff9f87; }
 
@@ -125,7 +121,7 @@
 
 .footer__inner {
   display: flex;
-  min-height: 8rem;
+  padding-block: 1.15rem;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
@@ -137,7 +133,6 @@
 
 .status-page {
   display: grid;
-  min-height: calc(100vh - var(--header-height));
   place-content: center;
   justify-items: start;
   width: min(calc(100% - 2 * var(--gutter)), 48rem);
@@ -156,7 +151,7 @@
 
 .page-loader {
   display: flex;
-  min-height: 55vh;
+  min-height: 12rem;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;

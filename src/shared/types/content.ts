@@ -15,14 +15,14 @@ export interface ExperienceItem {
   period: string;
   location: string;
   achievements: string[];
+  technologies: string[];
 }
 
 export interface EducationItem {
   institution: string;
   title: string;
   period: string;
-  location: string;
-  description: string;
+  description?: string;
 }
 
 export interface TechnologyGroup {
@@ -31,7 +31,11 @@ export interface TechnologyGroup {
 }
 
 export interface Project {
-  slug: "ia-platform" | "localroot";
+  slug: string;
+  status: string;
+  contribution: string;
+  repository?: string;
+  aliases?: readonly string[];
   path: `/proyectos/${string}`;
   title: string;
   eyebrow: string;
@@ -46,8 +50,11 @@ export interface Project {
   }>;
 }
 
-export interface ResourceItem {
+export interface Article {
+  slug: string;
+  path: `/laboratorio/${string}`;
+  category?: string;
   title: string;
-  description: string;
-  status: string;
+  summary: string;
+  sections: readonly { title: string; text: string }[];
 }

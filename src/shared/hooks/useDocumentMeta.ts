@@ -51,7 +51,7 @@ export function useDocumentMeta({
     updateMetaTag("property", "og:description", description);
     updateMetaTag("property", "og:url", canonicalUrl);
     updateMetaTag("property", "og:image", socialImageUrl);
-    updateMetaTag("property", "og:image:alt", "Arquitectura de software y desarrollo Full Stack");
+    updateMetaTag("property", "og:image:alt", site.socialImageAlt);
     updateMetaTag("property", "og:image:width", "1200");
     updateMetaTag("property", "og:image:height", "630");
     updateMetaTag("name", "twitter:card", "summary_large_image");
@@ -70,6 +70,8 @@ export function useDocumentMeta({
       }
 
       script.textContent = JSON.stringify(structuredData);
+    } else {
+      document.getElementById("structured-data")?.remove();
     }
 
     canonicalLink.href = canonicalUrl;

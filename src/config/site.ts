@@ -1,20 +1,40 @@
-import type { NavigationItem, SocialLink } from "../shared/types/content";
+import type { Article, NavigationItem, Project, SocialLink } from "../shared/types/content";
+
+const name = "Brayan Stiven Barajas Ariza";
+const role = "Ingeniero de Sistemas | Backend Python e IA Aplicada";
+
+export const profile = {
+  name,
+  shortName: "BB",
+  role,
+  location: "Medellín, Colombia",
+  introduction:
+    "Soy desarrollador de software especializado en backend con Python, integración de sistemas empresariales e inteligencia artificial aplicada.",
+  about: [
+    "He desarrollado APIs REST, servicios de chat y flujos de procesamiento documental con RAG, embeddings y recuperación vectorial.",
+    "Trabajo en automatización de procesos y desarrollo de aplicaciones mantenibles con Python, bases de datos relacionales, Docker y procesamiento asíncrono.",
+  ],
+} as const;
 
 export const site = {
   origin: "https://stivenbsba.github.io",
   basePath: "/MyBlog",
-  name: "Brayan Barajas | Full Stack Developer",
-  description:
-    "Portafolio de Brayan Barajas, desarrollador Full Stack especializado en React, Ruby on Rails, Node.js y Python.",
+  name: `${name} | ${role}`,
+  description: `Portafolio de ${name}, ingeniero de sistemas especializado en backend con Python e IA aplicada.`,
   socialImagePath: "/og-cover.jpg",
+  socialImageAlt: "Ilustración de arquitectura de software",
 } as const;
 
 export const getSiteUrl = (path = "/") => {
-  const normalizedPath = path.replace(/^\/+|\/+$/g, "");
-  const baseUrl = `${site.origin}${site.basePath}/`;
-
-  return normalizedPath ? `${baseUrl}${normalizedPath}` : baseUrl;
+  const cleanPath = path.replace(/^\/+|\/+$/g, "");
+  return `${site.origin}${site.basePath}/${cleanPath}`;
 };
+
+export const socialProfiles = {
+  github: "https://github.com/StivenBsBa",
+  linkedin: "https://www.linkedin.com/in/brayanstiven/",
+  email: "bsbariza@gmail.com",
+} as const;
 
 export const personStructuredData = {
   "@context": "https://schema.org",
@@ -22,14 +42,11 @@ export const personStructuredData = {
     {
       "@type": "Person",
       "@id": `${getSiteUrl()}#person`,
-      name: "Brayan Barajas",
-      jobTitle: "Full Stack Developer",
+      name,
+      jobTitle: role,
       url: getSiteUrl(),
-      sameAs: [
-        "https://github.com/StivenBsBa",
-        "https://www.linkedin.com/in/brayanstiven/",
-      ],
-      knowsAbout: ["React", "TypeScript", "Ruby on Rails", "Node.js", "Python"],
+      sameAs: [socialProfiles.github, socialProfiles.linkedin],
+      knowsAbout: ["Python", "Flask", "MySQL", "LangChain", "RAG"],
     },
     {
       "@type": "WebSite",
@@ -42,35 +59,53 @@ export const personStructuredData = {
   ],
 } as const;
 
-export const profile = {
-  name: "Brayan Barajas",
-  shortName: "BB",
-  role: "Full Stack Developer",
-  location: "Medellín, Colombia",
-  availability: "Disponible para colaborar",
-  introduction:
-    "Construyo productos web mantenibles de extremo a extremo, con especial interés en backend, arquitectura y experiencias frontend rápidas.",
-  about: [
-    "Soy desarrollador Full Stack e ingeniero de sistemas en formación. Disfruto convertir problemas complejos en soluciones claras, medibles y fáciles de mantener.",
-    "Trabajo principalmente con React, Ruby on Rails, Node.js y Python. Me motiva aprender, compartir conocimiento y mejorar continuamente la calidad técnica de los equipos y productos en los que participo.",
-  ],
-} as const;
-
 export const navigationItems: NavigationItem[] = [
-  { label: "Sobre mí", sectionId: "sobre-mi" },
   { label: "Experiencia", sectionId: "experiencia" },
-  { label: "Tecnologías", sectionId: "tecnologias" },
   { label: "Proyectos", sectionId: "proyectos" },
+  { label: "Sobre mí", sectionId: "sobre-mi" },
+  { label: "Tecnologías", sectionId: "tecnologias" },
   { label: "Laboratorio", sectionId: "laboratorio" },
+  { label: "CV", sectionId: "cv" },
   { label: "Contacto", sectionId: "contacto" },
 ];
-
-export const socialProfiles = {
-  github: "https://github.com/StivenBsBa",
-  linkedin: "https://www.linkedin.com/in/brayanstiven/",
-} as const;
 
 export const socialLinks: SocialLink[] = [
   { label: "GitHub", href: socialProfiles.github, icon: "github" },
   { label: "LinkedIn", href: socialProfiles.linkedin, icon: "linkedin" },
 ];
+
+export function getProjectMeta(project: Project) {
+  return {
+    title: `${project.title} | ${profile.name}`,
+    description: project.summary,
+    path: project.path,
+    type: "website" as const,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": project.repository ? "SoftwareSourceCode" : "CreativeWork",
+      name: project.title,
+      description: project.summary,
+      url: getSiteUrl(project.path),
+      ...(project.repository && { codeRepository: project.repository }),
+      author: { "@id": `${getSiteUrl()}#person`, name: profile.name },
+    },
+  };
+}
+
+export function getArticleMeta(article: Article) {
+  return {
+    title: `${article.title} | ${profile.name}`,
+    description: article.summary,
+    path: article.path,
+    type: "article" as const,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: article.title,
+      description: article.summary,
+      url: getSiteUrl(article.path),
+      inLanguage: "es-CO",
+      author: { "@type": "Person", "@id": `${getSiteUrl()}#person`, name: profile.name },
+    },
+  };
+}

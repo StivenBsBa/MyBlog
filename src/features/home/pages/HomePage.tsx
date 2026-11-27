@@ -5,6 +5,7 @@ import { personStructuredData, site } from "../../../config/site";
 import { AboutSection } from "../components/AboutSection";
 import { ContactSection } from "../components/ContactSection";
 import { ExperienceSection } from "../components/ExperienceSection";
+import { ResumeSection } from "../components/ResumeSection";
 import { Hero } from "../components/Hero";
 import { LabSection } from "../components/LabSection";
 import { ProjectsSection } from "../components/ProjectsSection";
@@ -24,19 +25,21 @@ export default function HomePage() {
     const sectionId = location.hash.slice(1);
     if (!sectionId) return;
 
-    window.requestAnimationFrame(() => {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById(sectionId)?.scrollIntoView();
     });
+    return () => window.cancelAnimationFrame(frame);
   }, [location.hash]);
 
   return (
     <>
       <Hero />
-      <AboutSection />
       <ExperienceSection />
-      <TechnologiesSection />
       <ProjectsSection />
+      <AboutSection />
+      <TechnologiesSection />
       <LabSection />
+      <ResumeSection />
       <ContactSection />
     </>
   );
